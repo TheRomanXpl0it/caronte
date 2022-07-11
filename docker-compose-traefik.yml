@@ -1,0 +1,30 @@
+version: "3.7"
+services:
+
+  mongo:
+    image: mongo:4.4
+    restart: unless-stopped
+    volumes:
+      - db:/data/db
+
+  caronte:
+    #image: ghcr.io/eciavatta/caronte:latest
+    image: tox1k/caronte:latest
+    environment:
+      MONGO_HOST: mongo
+      MONGO_PORT: 27017
+    depends_on:
+      - mongo
+    links:
+      - mongo
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.caronte.rule=Host(`SUB.DOMAIN.ME`)" # Change me
+      - "traefik.http.routers.caronte.entrypoints=websecure"
+      - "traefik.http.routers.caronte.tls.certresolver=le"
+      - "traefik.http.services.caronte.loadbalancer.server.port=3333"
+
+volumes:
+  db:
+    external: false
