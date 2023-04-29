@@ -12,7 +12,6 @@ do
     echo Starting
     date
 
-    rm pcaps/service*/*.pcap
     scp -r root@$VM_IP:/root/pcaps /tmp/vm_pcaps
     for pcap in pcaps/service*/*
     do
@@ -23,6 +22,7 @@ do
             -F "flush_all=false" && echo '' && \
         ssh root@$VM_IP rm /root/$pcap
     done
+    rm pcaps/service*/*.pcap
     echo Sleeping
     sleep 60
 done
