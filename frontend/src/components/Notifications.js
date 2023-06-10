@@ -71,6 +71,11 @@ class Notifications extends Component {
                 n.description = `the maximum range is 24h`;
                 n.variant = "red";
                 return this.pushNotification(n);
+            case "reset":
+                n.title = "reset settings";
+                n.description = `reset menu opened`;
+                n.variant = "purple";
+                return this.pushNotification(n);
             default:
                 return null;
         }

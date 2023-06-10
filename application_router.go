@@ -68,6 +68,12 @@ func CreateApplicationRouter(applicationContext *ApplicationContext,
 		c.JSON(http.StatusAccepted, gin.H{})
 		notificationController.Notify("setup", gin.H{})
 	})
+	
+	router.POST("/reset", func(c *gin.Context) {
+		applicationContext.IsConfigured = false
+		c.JSON(http.StatusAccepted, gin.H{})
+		notificationController.Notify("reset", gin.H{})
+	})
 
 	router.GET("/ws", func(c *gin.Context) {
 		if err := notificationController.NotificationHandler(c.Writer, c.Request); err != nil {

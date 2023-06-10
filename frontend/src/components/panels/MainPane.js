@@ -52,7 +52,7 @@ class MainPane extends Component {
                 "in the services panel you can assign new services or edit existing ones" + nl +
                 "each service is associated with a port number,^300 and will be shown in the connection list", // 8
                 "from the configuration panel you can change the settings of the frontend application", // 9
-                "that's all! and have fun!" + nl + "created by @eciavatta" // 10
+                "that's all! and have fun!" + nl + "created by @eciavatta and modded by @tde-nico" // 10
             ],
             typeSpeed: 40,
             cursorChar: "_",

@@ -31,9 +31,11 @@ import StatsPane from "../panels/StatsPane";
 import StreamsPane from "../panels/StreamsPane";
 import Timeline from "../Timeline";
 import "./MainPage.scss";
+import backend from "../../backend";
 
 class MainPage extends Component {
 
+    
     state = {
         timelineHeight: 210
     };
@@ -57,7 +59,7 @@ class MainPage extends Component {
             <ReflexContainer orientation="horizontal" className="page main-page">
                 <div className="fuck-css">
                     <ReflexElement className="page-header">
-                        <Header onOpenFilters={() => this.setState({filterWindowOpen: true})} configured={true}/>
+                        <Header onOpenFilters={() => this.setState({filterWindowOpen: true})} configured={true} onReset={() => backend.post("/reset").then((_) => {this.props.onReset();})}/>
                         {modal}
                     </ReflexElement>
                 </div>

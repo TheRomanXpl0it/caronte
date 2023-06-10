@@ -58,7 +58,7 @@ class App extends Component {
             <Router>
                 <Notifications/>
                 {this.state.connected ?
-                    (this.state.configured ? <MainPage version={this.state.version}/> :
+                    (this.state.configured ? <MainPage version={this.state.version} onReset={() => this.setState({configured: false})}/> :
                         <ConfigurationPage onConfigured={() => this.setState({configured: true})}/>) :
                     <ServiceUnavailablePage/>
                 }

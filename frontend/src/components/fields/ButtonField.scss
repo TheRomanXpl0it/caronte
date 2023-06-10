@@ -112,6 +112,21 @@
     }
   }
 
+  .button-variant-cyan {
+    color: $color-cyan-light;
+    background-color: $color-cyan;
+
+    &.button-bordered {
+      border-bottom: 5px solid $color-cyan-dark;
+    }
+
+    &:hover,
+    &:active {
+      color: $color-cyan-light;
+      background-color: $color-cyan-dark;
+    }
+  }
+
   .button-variant-green {
     color: $color-green-light;
     background-color: $color-green;
