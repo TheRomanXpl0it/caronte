@@ -2,7 +2,8 @@
 
 set -e
 
-VM_IP=10.60.17.1
+# Edit
+VM_IP=$1
 
 mkdir -p /tmp/vm_pcaps/ || true
 cd /tmp/vm_pcaps/
@@ -20,9 +21,9 @@ do
             -H "Content-Type: multipart/form-data" \
             -F "file=@$pcap" \
             -F "flush_all=false" && echo '' && \
-        ssh root@$VM_IP rm /root/$pcap
+        ssh root@$VM_IP rm -f /root/$pcap
     done
-    rm pcaps/service*/*.pcap
+    rm -f pcaps/service*/*.pcap
     echo Sleeping
     sleep 60
 done
