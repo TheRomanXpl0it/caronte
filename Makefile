@@ -46,7 +46,11 @@ ssh_copy_id:
 ssh: ssh_copy_id
 	ssh root@$(VM_IP)
 
-dump: ssh_copy_id scp_dump
+dump_copy: ssh_copy_id scp_dump
+	ssh root@$(VM_IP) bash dump.sh
+	./import_pcaps.sh $(VM_IP)
+
+dump: scp_dump
 	ssh root@$(VM_IP) bash dump.sh
 	./import_pcaps.sh $(VM_IP)
 
@@ -73,4 +77,4 @@ help:
 
 # Phony
 
-.PHONY: all build up down start stop sniff scp_dump ssh_copy_id ssh dump help
+.PHONY: all build up down start stop sniff scp_dump ssh_copy_id ssh dump dump_copy help

@@ -2,10 +2,10 @@
 
 # EDIT with "Port Service"
 services=(
-	"443 MOOZ"
-	"18080 biomarkt"
-	"1337 cc_market"
-	"8000 crashair"
+	"80 CApp"
+	"5000 CC-Manager"
+	"1337 TiCCket"
+	"8080 FIXME"
 )
 
 

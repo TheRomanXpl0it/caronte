@@ -14,7 +14,7 @@ do
     date
 
     scp -r root@$VM_IP:/root/pcaps /tmp/vm_pcaps
-    for pcap in pcaps/service*/*
+    for pcap in pcaps/service*/*.pcap
     do
         echo Uploading $pcap
         curl -X POST "http://localhost:3333/api/pcap/upload" \
