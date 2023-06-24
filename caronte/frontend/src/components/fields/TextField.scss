@@ -1,0 +1,58 @@
+@import "../../colors.scss";
+
+.text-field {
+  font-size: 0.9em;
+  margin: 5px 0;
+
+  label {
+    display: block;
+    margin: 0;
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  &.field-active {
+    textarea {
+      color: $color-primary-3 !important;
+      background-color: $color-primary-4 !important;
+    }
+  }
+
+  &.field-invalid {
+    textarea {
+      color: $color-primary-4 !important;
+      background-color: $color-secondary-2 !important;
+    }
+  }
+
+  &.field-small {
+    font-size: 0.8em;
+  }
+
+  .field-clear {
+    font-size: 0.9em;
+    font-weight: 600;
+    position: absolute;
+    z-index: 10;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+    letter-spacing: -0.5px;
+  }
+
+  &.field-active .field-clear {
+    color: $color-primary-2;
+  }
+
+  .field-error {
+    font-size: 0.9em;
+    padding: 5px 10px;
+    color: $color-secondary-0;
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+    background: $color-secondary-2 !important;
+  }
+}

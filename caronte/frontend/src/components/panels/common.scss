@@ -1,0 +1,107 @@
+@import "../../colors.scss";
+
+.pane-container {
+  height: 100%;
+  background-color: $color-primary-3;
+
+  .pane-section {
+    background-color: $color-primary-0;
+
+    .section-header {
+      font-size: 0.9em;
+      font-weight: 500;
+      display: flex;
+      padding: 5px 10px;
+      background-color: $color-primary-3;
+
+      .api-request {
+        flex: 1;
+      }
+    }
+
+    .section-content {
+      padding: 10px;
+    }
+
+    .section-table {
+      position: relative;
+      overflow-y: scroll;
+
+      .table-error {
+        font-size: 0.8em;
+        margin-left: 10px;
+        color: $color-secondary-0;
+      }
+
+      &:hover::-webkit-scrollbar-thumb {
+        background: $color-secondary-2;
+      }
+    }
+
+    table {
+      margin-bottom: 0;
+
+      tbody tr {
+        border-top: 3px solid $color-primary-0;
+        border-bottom: 3px solid $color-primary-0;
+        background-color: $color-primary-3;
+      }
+
+      th {
+        font-size: 0.8em;
+        position: sticky;
+        top: 0;
+        padding: 2px 5px;
+        border: none;
+        background-color: $color-primary-2;
+      }
+
+      .row-small {
+        font-size: 0.9em;
+      }
+
+      .row-clickable {
+        cursor: pointer;
+
+        &:hover {
+          background-color: $color-primary-0;
+        }
+      }
+
+      .row-selected {
+        background-color: $color-primary-0;
+      }
+    }
+  }
+
+  .section-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    background-color: $color-primary-0;
+
+    .button-field {
+      margin-left: 10px;
+    }
+  }
+
+  .double-pane-container {
+    display: flex;
+
+    .pane-section {
+      flex: 1;
+    }
+
+    .pane-section:nth-child(1) {
+      margin-right: 5px;
+    }
+
+    .pane-section:nth-child(2) {
+      margin-left: 5px;
+    }
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+    background: $color-secondary-2;
+  }
+}

@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+
+  mongo:
+    image: mongo:4.4
+    restart: unless-stopped
+    volumes:
+      - db:/data/db
+
+  caronte:
+    #image: ghcr.io/eciavatta/caronte:latest
+    #image: tox1k/caronte:latest
+    build: ./
+    ports:
+      - "3333:3333"
+    environment:
+      MONGO_HOST: mongo
+      MONGO_PORT: 27017
+    depends_on:
+      - mongo
+    links:
+      - mongo
+    restart: unless-stopped
+
+volumes:
+  db:
+    external: false

@@ -1,0 +1,50 @@
+@import "../colors";
+
+.header {
+  padding: 15px;
+
+  .header-content {
+    display: flex;
+    width: 100%;
+    padding: 0 10px;
+    background-color: $color-primary-0;
+  }
+
+  .header-title {
+    width: 150;
+    margin: 5px 0 5px 0;
+  }
+
+  .header-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin: 7px 0;
+
+    .button-field {
+      margin-left: 7px;
+    }
+  }
+
+  .filters-bar {
+    flex: 1;
+    padding: 3px 0;
+
+    .filter,
+    .button-field {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .button-field button {
+      font-weight: 400;
+      padding: 7px 10px;
+      border-radius: 5px;
+    }
+  }
+
+  @media screen and (max-width: 1530px) {
+    &.configured .header-title {
+      display: none;
+    }
+  }
+}

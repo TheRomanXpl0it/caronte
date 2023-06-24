@@ -1,0 +1,23 @@
+@import "../../colors";
+
+.main-page {
+  height: 100vh !important;
+
+  .page-footer {
+    overflow: hidden !important;
+    min-height: 210px;
+  }
+
+  .page-content {
+    padding: 0 7.5px;
+
+    .connections-pane {
+      margin-right: 7.5px;
+    }
+
+    .details-pane {
+      overflow: hidden;
+      margin-left: 7.5px;
+    }
+  }
+}
