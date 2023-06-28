@@ -2,12 +2,7 @@
 
 # EDIT with "Port Service"
 services=(
-	"80 CTFe_scoreboard"
-	"5005 CTFe_roulette"
-	"5006 CTFe_notekeep"
-	"1234 NotABook"
-	"5555 SaaS"
-	"5000 WeirdCPU"
+	"80 a"
 )
 
 

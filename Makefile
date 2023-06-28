@@ -43,7 +43,10 @@ scp_dump:
 ssh_copy_id:
 	ssh-copy-id -i ~/.ssh/id_rsa.pub root@$(VM_IP)
 
-ssh: ssh_copy_id
+ssh_copy: ssh_copy_id
+	ssh root@$(VM_IP)
+
+ssh:
 	ssh root@$(VM_IP)
 
 dump_copy: ssh_copy_id scp_dump
@@ -54,7 +57,12 @@ dump: scp_dump
 	ssh root@$(VM_IP) bash dump.sh
 	./import_pcaps.sh $(VM_IP)
 
+put:
+	./put_services
 
+config:
+	scp ./config.sh root@$(VM_IP):/root/config.sh
+	ssh root@$(VM_IP) bash config.sh
 
 # Help
 
@@ -77,4 +85,4 @@ help:
 
 # Phony
 
-.PHONY: all build up down start stop sniff scp_dump ssh_copy_id ssh dump dump_copy help
+.PHONY: all build up down start stop sniff scp_dump ssh_copy_id ssh_copy ssh dump_copy dump put config help

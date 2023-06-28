@@ -4,3 +4,6 @@
 # Build file
 caronte/caronte
 coverage.txt
+
+# DB Volume
+caronte/db/*
